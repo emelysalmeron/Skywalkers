@@ -31,7 +31,8 @@
       } else if (!!this.$services) {
         const data = await this.fetchPlanets();
         const { bodies } = data;
-        this.fetchServiceList(bodies);
+        const services = await this.fetchServices();
+        this.fetchServiceList(bodies, services);
       }
 
       // Toggle hamburgermenu
@@ -102,8 +103,7 @@
       articlesHTML += "</div>";
       return articlesHTML;
     },
-    async fetchServiceList(data) {
-      const services = await this.fetchServices();
+    async fetchServiceList(data, services) {
       let output = '<ul class="service-list">';
       const html = await services
         .map((service) => {
