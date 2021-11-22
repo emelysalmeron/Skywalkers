@@ -1,0 +1,122 @@
+/*
+  VARIABLES
+*/
+$title-font: "Abril Fatface", cursive;
+$text-font: "Montserrat", sans-serif;
+
+// $grey: #e5e5e5;
+$dark-grey: #716d69;
+$green: #32b768;
+
+$dark-blue: #073248;
+$blue: #195986;
+
+$blue-grey: #bed6e1;
+$grey: #bed5e0;
+
+/*
+  Typescale
+*/
+html {
+  font-size: 100%;
+} /*16px*/
+
+body {
+  font-family: $text-font;
+  font-weight: 400;
+  line-height: 1.75;
+  color: #000000;
+}
+
+p {
+  margin-bottom: 1rem;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5 {
+  margin: 3rem 0 1.38rem;
+  font-family: $title-font;
+  font-weight: 400;
+  line-height: 1.3;
+}
+
+h1 {
+  margin-top: 0;
+  font-size: 3.052rem;
+}
+
+h2 {
+  font-size: 2.441rem;
+}
+
+h3 {
+  font-size: 1.953rem;
+}
+
+h4 {
+  font-size: 1.563rem;
+}
+
+h5 {
+  font-size: 1.25rem;
+}
+
+small,
+.text_small {
+  font-size: 0.8rem;
+}
+
+/*
+  Basic Styling
+*/
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  list-style-type: none;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+
+  header {
+    .h-layout {
+      min-height: auto;
+    }
+  }
+
+  footer {
+    margin-top: auto;
+    padding: 0;
+    .h-layout {
+      min-height: auto;
+
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      p {
+        text-align: center;
+        a {
+          color: $grey;
+
+          &:hover {
+            color: #fff;
+          }
+        }
+      }
+    }
+  }
+}
+
+.h-layout {
+  max-width: 90rem;
+  margin: 0 auto;
+  padding: 2rem;
+  min-height: 100vh;
+  // border: solid 2px green;
+}
