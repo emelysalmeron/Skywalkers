@@ -5,7 +5,11 @@
       this.registerListeners();
     },
     cacheElements() {
-      this.$contactForm = document.querySelector('.contact-form');
+      // menu toggler & navbar
+      this.$menuToggler = document.querySelector(".menuToggler");
+      this.$navbar = document.querySelector(".navbar");
+
+      this.$contactForm = document.querySelector(".contact-form");
       // On the main page
       this.$blogSection = document.querySelector('.blog-section');
       this.$serviceSection = document.querySelector('.service-section');
@@ -29,15 +33,21 @@
         const { bodies } = data;
         this.fetchServiceList(bodies);
       }
+
+      // Toggle hamburgermenu
+      this.$menuToggler.addEventListener("click", () => {
+        this.$navbar.classList.toggle("visible");
+        this.$menuToggler.classList.toggle("visible");
+      });
     },
     async fetchBlogArticles() {
-      const apiUrl = 'https://api.spaceflightnewsapi.net/v3/articles';
+      const apiUrl = "https://api.spaceflightnewsapi.net/v3/articles";
 
       try {
         const response = await fetch(apiUrl);
         const json = await response.json();
         return json;
-      } catch(err) {
+      } catch (err) {
         return { message: err.message };
       }
     },
@@ -62,13 +72,15 @@
     },
     renderBlog(articles) {
       let output = '<ul class="blog-list">';
-      const articlesLinks = articles.map((art) => {
-        console.table(art);
-        return `
+      const articlesLinks = articles
+        .map((art) => {
+          console.table(art);
+          return `
           <li class="blog-list-item">
               <a class="blog-link" href="${art.url} target="_blank" rel="noopener noreferrer" title="${art.title}">${art.title}</a>
-          </li>`
-      }).join('');
+          </li>`;
+        })
+        .join("");
       output += `${articlesLinks}</ul>`;
       output += this.renderBlogArticles(articles);
       this.$blogArticles.innerHTML = output;
@@ -76,7 +88,8 @@
     renderBlogArticles(articles) {
       let articlesHTML = "<div class='blog-articles'";
       for (let i = 0; i < 2; i++) {
-        const { title, url, imageUrl, newsSite, summary, publishedAt } = articles[i];
+        const { title, url, imageUrl, newsSite, summary, publishedAt } =
+          articles[i];
         articlesHTML += `
           <article class="blog-article">
             <h2>${title}</h2>
@@ -85,7 +98,7 @@
               ${summary}
             </div>
           </article>
-        `
+        `;
       }
       articlesHTML += "</div>";
       return articlesHTML;
@@ -116,4 +129,4 @@
     },
   }
   app.initialize();
-}) ();
+})();
