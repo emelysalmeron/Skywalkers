@@ -12,7 +12,7 @@ $dark-blue: #073248;
 $blue: #195986;
 
 $blue-grey: #bed6e1;
-$grey: #bed5e0;
+$grey: #b3b4b4;
 
 /*
   Hamburger - Mobile Nav
@@ -130,7 +130,7 @@ header {
       max-width: 30rem;
       transform: translateX(100%);
       transition: all 0.4s ease-in-out;
-      background-color: #fff;
+      background-color: $dark-blue;
       border-radius: 4px;
       // color: #000;
       height: calc(100vh - 5rem);
@@ -148,6 +148,7 @@ header {
         height: auto;
         transform: translateX(0);
         margin-left: 1rem;
+        background-color: #fff;
       }
 
       &__list {
@@ -170,8 +171,13 @@ header {
           }
 
           a {
-            color: #000;
+            color: $grey;
             position: relative;
+            text-decoration: none;
+
+            @media (min-width: 60rem) {
+              color: $dark-blue;
+            }
             &:after {
               content: "";
               position: absolute;
@@ -182,13 +188,15 @@ header {
               height: 0.25rem;
               border-radius: 0.125rem;
               transform: translateY(0.5rem);
-              background-color: $green;
+              background-color: $grey;
               transition: all 0.3s ease-in-out;
+
+              @media (min-width: 60rem) {
+                background-color: $dark-blue;
+              }
             }
 
             &:hover {
-              color: $green;
-
               &::after {
                 opacity: 1;
                 width: 100%;

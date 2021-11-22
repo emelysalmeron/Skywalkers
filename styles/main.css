@@ -204,7 +204,7 @@ header .navbar__nav {
   max-width: 30rem;
   transform: translateX(100%);
   transition: all 0.4s ease-in-out;
-  background-color: #fff;
+  background-color: #073248;
   border-radius: 4px;
   height: calc(100vh - 5rem);
   top: 5rem;
@@ -221,6 +221,7 @@ header .navbar__nav {
     height: auto;
     transform: translateX(0);
     margin-left: 1rem;
+    background-color: #fff;
   }
 }
 header .navbar__nav__list {
@@ -242,8 +243,14 @@ header .navbar__nav__list > li {
   font-size: 1.2rem;
 }
 header .navbar__nav__list > li a {
-  color: #000;
+  color: #b3b4b4;
   position: relative;
+  text-decoration: none;
+}
+@media (min-width: 60rem) {
+  header .navbar__nav__list > li a {
+    color: #073248;
+  }
 }
 header .navbar__nav__list > li a:after {
   content: "";
@@ -255,11 +262,13 @@ header .navbar__nav__list > li a:after {
   height: 0.25rem;
   border-radius: 0.125rem;
   transform: translateY(0.5rem);
-  background-color: #32b768;
+  background-color: #b3b4b4;
   transition: all 0.3s ease-in-out;
 }
-header .navbar__nav__list > li a:hover {
-  color: #32b768;
+@media (min-width: 60rem) {
+  header .navbar__nav__list > li a:after {
+    background-color: #073248;
+  }
 }
 header .navbar__nav__list > li a:hover::after {
   opacity: 1;
@@ -292,6 +301,53 @@ header .navbar.visible .navbar__nav {
     height: auto;
     transform: translateY(0);
   }
+}
+
+footer {
+  background-color: #073248;
+}
+footer p {
+  color: #bed6e1;
+}
+footer ul {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 1rem;
+}
+@media (min-width: 60rem) {
+  footer ul {
+    flex-direction: row;
+  }
+}
+footer ul li {
+  padding: 0.5rem;
+}
+footer ul li a {
+  color: #bed6e1;
+  text-decoration: none;
+  position: relative;
+}
+footer ul li a:after {
+  content: "";
+  position: absolute;
+  top: 100%;
+  left: 0;
+  width: 0;
+  opacity: 0;
+  height: 0.25rem;
+  border-radius: 0.125rem;
+  transform: translateY(0.5rem);
+  background-color: #bed5e0;
+  transition: all 0.3s ease-in-out;
+}
+@media (min-width: 60rem) {
+  footer ul li a:after {
+    background-color: #073248;
+  }
+}
+footer ul li a:hover::after {
+  opacity: 1;
+  width: 100%;
 }
 
 /*# sourceMappingURL=main.css.map */
