@@ -3,5 +3,10 @@
   "editor.renderIndentGuides": true,
   "editor.tabSize": 2,
   "files.autoSave": "onFocusChange",
-  "editor.defaultFormatter": "esbenp.prettier-vscode"
+  "editor.defaultFormatter": "esbenp.prettier-vscode",
+  "workbench.colorCustomizations": {
+    "activityBar.background": "#083049",
+    "titleBar.activeBackground": "#0B4466",
+    "titleBar.activeForeground": "#F6FBFE"
+  }
 }
