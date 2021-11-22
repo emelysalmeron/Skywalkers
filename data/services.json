@@ -1,0 +1,20 @@
+[
+  {
+    "title": "Budget Plan",
+    "imageUrl": "",
+    "description": "A budget-friendly option for fast family friendly interplanetary travel.",
+    "price": 150
+  },
+  {
+    "title": "Mystery Plan",
+    "imageUrl": "",
+    "description": "Do you feel like adventure? Take your chance with our Mystery Plan, and there is bound to be some excitement in your life!",
+    "price": 300
+  },
+  {
+    "title": "Deluxe Plan",
+    "imageUrl": "",
+    "description": "The most popular travel destinations and unseen luxury packages, like the romantic Eros package!",
+    "price": 450
+  }
+]
