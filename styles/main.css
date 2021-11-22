@@ -1,0 +1,15 @@
+body {
+  background-color: red;
+}
+
+ul {
+  list-style-type: none;
+}
+ul li {
+  margin: 5rem;
+}
+ul li a {
+  color: blue;
+}
+
+/*# sourceMappingURL=main.css.map */
