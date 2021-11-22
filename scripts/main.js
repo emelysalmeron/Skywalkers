@@ -31,7 +31,8 @@
       } else if (!!this.$services) {
         const data = await this.fetchPlanets();
         const { bodies } = data;
-        this.fetchServiceList(bodies);
+        const services = await this.fetchServices();
+        this.fetchServiceList(bodies, services);
       }
 
       // Toggle hamburgermenu
@@ -63,7 +64,7 @@
     },
     async fetchServices() {
       try {
-        const res = await fetch("../data/services.json");
+        const res = await fetch("data/services.json");
         const json = await res.json();
         return json;
       } catch (err) {
@@ -105,8 +106,7 @@
       articlesHTML += "</div>";
       return articlesHTML;
     },
-    async fetchServiceList(data) {
-      const services = await this.fetchServices();
+    async fetchServiceList(data, services) {
       let output = '<ul class="service-list">';
       const html = await services
         .map((service) => {
