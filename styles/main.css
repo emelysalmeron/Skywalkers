@@ -190,7 +190,7 @@ header .navbar .brand img {
 }
 header .navbar .brand span {
   padding-left: 1rem;
-  color: #bed6e1;
+  color: #020f14;
   font-size: 1.2rem;
 }
 header .navbar .brand span:hover {
@@ -394,12 +394,12 @@ input[type=submit]:hover {
 /* Style the container/contact section */
 .container {
   border-radius: 5px;
-  background-color: #f2f2f2;
+  background-color: #ffffff;
   padding: 10px;
 }
 
 .contact-form {
-  flex-wrap: wrap;
+  flex-wrap: wrap center;
 }
 .contact-form > div {
   width: 40rem;
