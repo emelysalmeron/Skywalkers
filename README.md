@@ -1,14 +1,17 @@
-# (project name)
+# Skywalkers Interplanetary Travel Agency
 
-<!-- describe your project -->
+Skywalkers Interplanetary Travel Agency is the place to book your
+budget-friendly trips to otherworldly places.
+
+## Team Skywalkers
+
+- Jeroen Dewelde - Artevelde University of Applied Science
+- Emely Salmeron - Hack Your Future Belgium
+- Charlotte Delvaux - Artevelde University of Applied Science
 
 ## Getting Started
 
-<!-- a guide to using this repository -->
-
-1. `git clone git@github.com:HackYourFutureBelgium/template-markdown.git`
-2. `cd template-markdown`
-3. `npm install`
+Visit [https://](https://emelysalmeron.github.io/Skywalkers/)
 
 ## Code Quality Checks
 

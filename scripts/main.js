@@ -63,7 +63,7 @@
     },
     async fetchServices() {
       try {
-        const res = await fetch("../data/services.json");
+        const res = await fetch("data/services.json");
         const json = await res.json();
         return json;
       } catch (err) {
