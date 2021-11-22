@@ -3,15 +3,43 @@
   <head>
     <meta charset="UTF-8" />
     <link rel="icon" type="image/svg+xml" href="./client/assets/favicon.ico" />
+    <base href="./" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Skywalkers' Interplanetary Travel Agency</title>
 
-    <link href="./styles/main.css" rel="stylesheet" />
+    <link href="styles/main.css" rel="stylesheet" />
   </head>
   <body>
-    <header>I'm a header</header>
+    <header>
+      <nav class="navbar h-layout">
+        <a class="brand" href="#" class="navbar__logo">
+          <img src="images/logo.png" alt="" />
+          <span> Skywalkers </span>
+        </a>
+
+        <a class="menuToggler">
+          <span></span>
+          <span></span>
+          <span></span>
+        </a>
+
+        <div class="navbar__nav">
+          <ul class="navbar__nav__list">
+            <li class="navbar__nav__listItem">
+              <a href="#">Services</a>
+            </li>
+            <li class="navbar__nav__listItem active">
+              <a href="#">Contact</a>
+            </li>
+            <li class="navbar__nav__listItem">
+              <a href="#">Blog</a>
+            </li>
+          </ul>
+        </div>
+      </nav>
+    </header>
     <main>Skywalkers Interplanetary Travel Agency</main>
     <footer>&copy; 2021-2022 - Skywalkers</footer>
-    <script src="./scripts/main.js"></script>
+    <script src="scripts/main.js"></script>
   </body>
 </html>

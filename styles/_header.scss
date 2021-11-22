@@ -1,0 +1,234 @@
+/*
+  VARIABLES
+*/
+$title-font: "Abril Fatface", cursive;
+$text-font: "Montserrat", sans-serif;
+
+// $grey: #e5e5e5;
+$dark-grey: #716d69;
+$green: #32b768;
+
+$dark-blue: #073248;
+$blue: #195986;
+
+$blue-grey: #bed6e1;
+$grey: #bed5e0;
+
+/*
+  Hamburger - Mobile Nav
+*/
+
+.menuToggler {
+  display: block;
+  width: 1.5rem;
+  height: 1.2rem;
+  position: relative;
+  transition: all 0.2s ease-in-out;
+  cursor: pointer;
+
+  @media (min-width: 60rem) {
+    display: none;
+  }
+
+  span {
+    display: block;
+    position: absolute;
+    height: 0.25rem;
+    width: 100%;
+    background-color: #000;
+    border-radius: 0.25rem;
+    opacity: 1;
+    left: 0;
+
+    transition: all 0.2s ease-in-out;
+
+    &:nth-child(1) {
+      top: 0;
+    }
+    &:nth-child(2) {
+      top: 50%;
+      transform: translateY(-50%);
+    }
+    &:nth-child(3) {
+      bottom: 0;
+    }
+  }
+  &:hover span {
+    background-color: #000;
+  }
+
+  &.visible span:nth-child(1) {
+    top: 50%;
+    transform: translateY(-50%);
+    transform: rotate(135deg);
+  }
+
+  &.visible span:nth-child(2) {
+    opacity: 0;
+    left: -2rem;
+  }
+
+  &.visible span:nth-child(3) {
+    top: 50%;
+    transform: translateY(-50%);
+    transform: rotate(-135deg);
+  }
+}
+
+/*
+  Navigation
+*/
+
+header {
+  .h-layout {
+    padding: 0;
+  }
+  .navbar {
+    // padding: 1rem 2rem;
+    padding: 1rem 2rem;
+
+    display: flex;
+    align-items: center;
+    position: relative;
+    justify-content: space-between;
+
+    .brand {
+      // padding: 0.5rem 0;
+      display: block;
+      font-size: 1.5rem;
+      font-weight: 500;
+      display: flex;
+      align-items: center;
+      text-decoration: none;
+
+      img {
+        border-radius: 50%;
+        width: 4rem;
+        height: 4rem;
+        // border: solid 1px red;
+        display: block;
+      }
+
+      span {
+        padding-left: 1rem;
+        color: $blue-grey;
+        font-size: 1.2rem;
+
+        &:hover {
+          color: $dark-blue;
+        }
+      }
+    }
+
+    &__nav {
+      // border: solid 2px red;
+      position: absolute;
+      visibility: hidden;
+      opacity: 0;
+      // width: 50%;
+      width: 0;
+      max-width: 30rem;
+      transform: translateX(100%);
+      transition: all 0.4s ease-in-out;
+      background-color: #fff;
+      border-radius: 4px;
+      // color: #000;
+      height: calc(100vh - 5rem);
+      top: 5rem;
+      // right: 0;
+      right: 0;
+      transform: translateX(-100%) translateX(-5rem);
+      z-index: 50;
+
+      @media (min-width: 60rem) {
+        position: relative;
+        visibility: visible;
+        opacity: 1;
+        top: 0;
+        height: auto;
+        transform: translateX(0);
+        margin-left: 1rem;
+      }
+
+      &__list {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+
+        @media (min-width: 60rem) {
+          flex-direction: row;
+          justify-content: flex-end;
+        }
+
+        > li {
+          padding: 2rem 0 2rem 0;
+          font-weight: 400;
+          margin-left: 2rem;
+          position: relative;
+          font-size: 1.2rem;
+          &.active {
+          }
+
+          a {
+            color: #000;
+            position: relative;
+            &:after {
+              content: "";
+              position: absolute;
+              top: 100%;
+              left: 0;
+              width: 0;
+              opacity: 0;
+              height: 0.25rem;
+              border-radius: 0.125rem;
+              transform: translateY(0.5rem);
+              background-color: $green;
+              transition: all 0.3s ease-in-out;
+            }
+
+            &:hover {
+              color: $green;
+
+              &::after {
+                opacity: 1;
+                width: 100%;
+              }
+            }
+          }
+        }
+      }
+
+      &__socials {
+        display: flex;
+        padding: 0;
+        justify-content: flex-start;
+
+        li {
+          margin-right: 2rem;
+          a {
+            svg {
+              width: 2rem;
+            }
+          }
+        }
+      }
+    }
+
+    &.visible .navbar__nav {
+      visibility: visible;
+      opacity: 1;
+      transform: translateX(2rem);
+      width: 50%;
+      right: 2rem;
+
+      @media (min-width: 60rem) {
+        position: relative;
+        visibility: visible;
+        opacity: 1;
+        top: 0;
+        height: auto;
+        transform: translateY(0);
+      }
+    }
+  }
+}
