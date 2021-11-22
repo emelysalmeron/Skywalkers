@@ -1,19 +1,52 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <link rel="icon" type="image/svg+xml" href="./client/assets/favicon.ico" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Skywalkers' Interplanetary Travel Agency</title>
 
-    <link href="./styles/main.css" rel="stylesheet" />
-  </head>
-  <body>
-    <header>I'm a header</header>
-    <main>Skywalkers Interplanetary Travel Agency
-      <section class="blog-section"></section>
-    </main>
-    <footer>&copy; 2021-2022 - Skywalkers</footer>
-    <script src="./scripts/main.js"></script>
-  </body>
+<head>
+  <meta charset="UTF-8" />
+  <link rel="icon" type="image/svg+xml" href="./client/assets/favicon.ico" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Skywalkers' Interplanetary Travel Agency</title>
+
+  <link href="./styles/main.css" rel="stylesheet" />
+</head>
+
+<body>
+  <header>I'm a header</header>
+  <main>Skywalkers Interplanetary Travel Agency
+    <section class="blog-section"></section>
+    
+
+    <div class="container">
+      <div style="text-align:center">
+        <h2>Contact Us</h2>
+        <p>Let's plan your next travel together, do not hesitate to leave us a message:</p>
+      </div>
+      <div class="contact-form">
+        <div class="column-form">
+          <img src="./public/images/contellation-contact.jpg">
+        </div>
+        <div class="column">
+          <form action="/action_page.php">
+            <label for="fname">First Name</label>
+            <input type="text" id="fname" name="firstname" placeholder="Your name..">
+            <label for="lname">Last Name</label>
+            <input type="text" id="lname" name="lastname" placeholder="Your last name..">
+            <label for="travel-package">Travel Package</label>
+            <select id="travel-package" name="travel-package">
+              <option value="budget">Budget</option>
+              <option value="mystery">Mystery</option>
+              <option value="deluxe">Deluxe</option>
+            </select>
+            <label for="subject">Subject</label>
+            <textarea id="subject" name="subject" placeholder="Write something.." style="height:170px"></textarea>
+            <input type="submit" value="Submit">
+          </form>
+        </div>
+      </div>
+    </div>
+  </main>
+  <footer>&copy; 2021-2022 - Skywalkers</footer>
+  <script src="./scripts/main.js"></script>
+</body>
+
 </html>
