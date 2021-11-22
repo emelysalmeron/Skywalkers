@@ -5,13 +5,46 @@
     <link rel="icon" type="image/svg+xml" href="./client/assets/favicon.ico" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Contact</title>
-
-    <link href="./styles/main.css" rel="stylesheet" />
+    <link href="styles/main.css" rel="stylesheet" />
+    <base href="../" />
   </head>
   <body>
-    <header>I'm a header</header>
-    <main>Skywalkers Interplanetary Travel Agency
-      <section class="blog-section"></section>
+    <header>
+      <nav class="navbar h-layout">
+        <a class="brand" href="#" class="navbar__logo">
+          <img src="images/logo.png" alt="" />
+          <span> Skywalkers </span>
+        </a>
+
+        <a class="menuToggler">
+          <span></span>
+          <span></span>
+          <span></span>
+        </a>
+
+        <div class="navbar__nav">
+          <ul class="navbar__nav__list">
+            <li class="navbar__nav__listItem">
+              <a href="./pages/services.html">Services</a>
+            </li>
+            <li class="navbar__nav__listItem active">
+              <a href="./pages/contact.html">Contact</a>
+            </li>
+            <li class="navbar__nav__listItem">
+              <a href="./pages/blog.html">Blog</a>
+            </li>
+            <li class="navbar__nav__listItem">
+              <a href="./pages/about.html">About</a>
+            </li>
+          </ul>
+        </div>
+      </nav>
+    </header>
+    <main>
+      <div class="h-layout">
+        <h1>Blog</h1>
+        <section class="blog-section"></section>
+      </div>
     </main>
     <footer>&copy; 2021-2022 - Skywalkers</footer>
     <script src="./scripts/main.js"></script>
