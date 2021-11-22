@@ -72,28 +72,31 @@
       }
     },
     renderBlog(articles) {
-      let output = '<ul class="blog-list">';
+      let output = "";
+      output += this.renderBlogArticles(articles);
+      output += '<ul class="blog-list">';
       const articlesLinks = articles
         .map((art) => {
           return `
-          <li class="blog-list-item">
-              <a class="blog-link" href="${art.url} target="_blank" rel="noopener noreferrer" title="${art.title}">${art.title}</a>
-          </li>`;
+        <li class="blog-list-item">
+        <a class="blog-link" href="${art.url} target="_blank" rel="noopener noreferrer" title="${art.title}">${art.title}</a>
+        </li>`;
         })
         .join("");
       output += `${articlesLinks}</ul>`;
-      output += this.renderBlogArticles(articles);
       this.$blogArticles.innerHTML = output;
     },
     renderBlogArticles(articles) {
-      let articlesHTML = "<div class='blog-articles'";
+      let articlesHTML = "<div class='blog-articles'>";
       for (let i = 0; i < 2; i++) {
         const { title, url, imageUrl, newsSite, summary, publishedAt } =
           articles[i];
         articlesHTML += `
           <article class="blog-article">
             <h2>${title}</h2>
-            <img class="blog-img" src="${imageUrl}" alt="${title}" />
+            <div class="blog-article__image">
+              <img class="blog-img" src="${imageUrl}" alt="${title}" />
+            </div>
             <div class="blog-content">
               ${summary}
             </div>
