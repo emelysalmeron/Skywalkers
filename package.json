@@ -9,18 +9,22 @@
     "lint:md": "markdownlint --ignore node_modules --config ./.markdownlint.jsonc --fix ./ ",
     "lint:css": "stylelint --fix './**/*.css'",
     "validate:html": "html-validate ./",
-    "accessibility": "achecker"
+    "accessibility": "achecker",
+    "sass:watch": "sass --watch ./styles/styles.scss ./styles/main.css"
   },
   "author": "HYF Belgium",
   "license": "MIT",
   "devDependencies": {
+    "@ls-lint/ls-lint": "^1.10.0",
     "accessibility-checker": "^3.1.10",
     "cspell": "^5.6.6",
     "html-validate": "^5.2.0",
     "markdownlint-cli": "^0.28.1",
     "prettier": "^2.3.2",
     "stylelint": "^13.13.1",
-    "stylelint-config-standard": "^22.0.0",
-    "@ls-lint/ls-lint": "^1.10.0"
+    "stylelint-config-standard": "^22.0.0"
+  },
+  "dependencies": {
+    "sass": "^1.43.4"
   }
 }
