@@ -1,0 +1,49 @@
+/*
+  VARIABLES
+*/
+$text-font: "Montserrat", sans-serif;
+
+$dark-grey: #716d69;
+$dark-blue: #073248;
+$blue: #195986;
+$blue-grey: #bed6e1;
+$grey: #bed5e0;
+
+.team {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+
+  &__member {
+    padding: 2rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    flex-basis: 20rem;
+    flex-grow: 1;
+
+    img {
+      width: 10rem;
+      height: 10rem;
+      border-radius: 50%;
+      border: solid 2px $dark-blue;
+      overflow: hidden;
+    }
+
+    h3 {
+      margin-top: 0;
+    }
+
+    a {
+      svg {
+        color: $dark-blue;
+      }
+
+      &:hover {
+        svg {
+          color: #000;
+        }
+      }
+    }
+  }
+}

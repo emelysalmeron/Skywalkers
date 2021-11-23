@@ -1,10 +1,6 @@
-// $grey: #e5e5e5;
 $dark-grey: #716d69;
-$green: #32b768;
-
 $dark-blue: #073248;
 $blue: #195986;
-
 $blue-grey: #bed6e1;
 $grey: #bed5e0;
 
@@ -19,6 +15,7 @@ footer {
     display: flex;
     flex-direction: column;
     margin-bottom: 1rem;
+
     @media (min-width: 60rem) {
       flex-direction: row;
     }

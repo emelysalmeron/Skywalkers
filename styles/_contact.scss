@@ -1,0 +1,106 @@
+/*
+  VARIABLES
+*/
+$dark-grey: #716d69;
+$dark-blue: #073248;
+$blue: #195986;
+$blue-grey: #bed6e1;
+$grey: #bed5e0;
+
+.contact-page {
+  &__title {
+    text-align: center;
+  }
+
+  .contact-form {
+    display: flex;
+    flex-wrap: wrap;
+
+    > * {
+      flex-basis: 30rem;
+      flex-grow: 1;
+    }
+
+    &__image {
+      display: block;
+      height: 20rem;
+      max-width: 100%;
+      object-fit: cover;
+      flex-grow: 1;
+      border-radius: 4px;
+    }
+
+    form {
+      margin-top: 1rem;
+      padding: 1rem;
+      background-color: #fff;
+      border-radius: 4px;
+
+      @media screen and (min-width: 70rem) {
+        margin-top: 0;
+        margin-left: 1rem;
+      }
+
+      input,
+      textarea {
+        font-family: inherit;
+
+        &:focus {
+          outline: solid 1px $dark-blue;
+        }
+      }
+
+      input[type="text"],
+      select,
+      textarea {
+        width: 100%;
+        padding: 16px;
+        border: 1px solid #ccc;
+        margin-top: 6px;
+        margin-bottom: 16px;
+        resize: vertical;
+        border-radius: 4px;
+      }
+
+      input[type="submit"] {
+        padding: 0.6rem 1.2rem;
+        background-color: $dark-blue;
+        text-decoration: none;
+        border-radius: 6px;
+        color: #fff;
+
+        border: none;
+        cursor: pointer;
+
+        &:hover {
+          background-color: #4578a0;
+        }
+      }
+    }
+  }
+}
+
+// contact on home page
+.contact-cta {
+  background-color: $dark-blue;
+  color: #fff;
+  height: 20rem;
+  min-height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  border-radius: 4px;
+
+  h2 {
+    text-align: center;
+  }
+
+  .btn--primary {
+    padding: 0.6rem 1.2rem;
+    background-color: #fff;
+    text-decoration: none;
+    border-radius: 6px;
+    color: $dark-blue;
+    display: inline-block;
+  }
+}

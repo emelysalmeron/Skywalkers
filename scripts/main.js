@@ -17,6 +17,8 @@
       this.$blogArticles = document.querySelector(".blog-articles");
       // On the services page
       this.$services = document.querySelector(".services");
+
+      this.$servicesHome = document.querySelector(".services--home");
     },
     async registerListeners() {
       if (!!this.$blogArticles) {
@@ -33,6 +35,13 @@
         const { bodies } = data;
         const services = await this.fetchServices();
         this.fetchServiceList(bodies, services);
+      }
+
+      if (this.$servicesHome) {
+        const data = await this.fetchPlanets();
+        const { bodies } = data;
+        const services = await this.fetchServices();
+        this.fetchServiceList(bodies, services, true);
       }
 
       // Toggle hamburgermenu
@@ -74,6 +83,7 @@
     renderBlog(articles) {
       let output = "";
       output += this.renderBlogArticles(articles);
+      output += "<h2>Check out the rest of our articles</h2>";
       output += '<ul class="blog-list">';
       const articlesLinks = articles
         .map((art) => {
@@ -93,10 +103,10 @@
           articles[i];
         articlesHTML += `
           <article class="blog-article">
+          
+            <img class="blog-img" src="${imageUrl}" alt="${title}" />
+          
             <h2>${title}</h2>
-            <div class="blog-article__image">
-              <img class="blog-img" src="${imageUrl}" alt="${title}" />
-            </div>
             <div class="blog-content">
               ${summary}
             </div>
@@ -106,7 +116,7 @@
       articlesHTML += "</div>";
       return articlesHTML;
     },
-    async fetchServiceList(data, services) {
+    async fetchServiceList(data, services, home = false) {
       let output = '<ul class="service-list">';
       const html = await services
         .map((service) => {
@@ -121,19 +131,26 @@
           return `
           <li class="service-list-item">
             <div class="service-card">
+              <img src="${service.imageUrl}" 
+                alt="${service.title}" 
+                class="service-img" />
               <h3>${service.title}</h3>
-              <img src="${service.imageUrl}" alt="${
-            service.title
-          }" class="service-img" />
-              <p>${service.description}</p>
-              <h4>Starting from <strong>${service.price}</strong>€</h4>
-              <em>Fly away to... <strong>${randomDestination.toUpperCase()}</strong></em>
+              <div class="content">
+                <em>Fly away to... <strong>${randomDestination.toUpperCase()}</strong></em>
+                <p>${service.description}</p>
+                <h4>Starting from <strong>€${service.price}</strong></h4>
+              
+              </div>
             </div>
           </li>`;
         })
         .join("");
       output += `${html}</ul>`;
-      this.$services.innerHTML = output;
+      if (!home) {
+        this.$services.innerHTML = output;
+      } else {
+        this.$servicesHome.innerHTML = output;
+      }
     },
   };
   app.initialize();

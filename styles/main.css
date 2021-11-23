@@ -15,6 +15,7 @@ body {
   font-weight: 400;
   line-height: 1.75;
   color: #000000;
+  background-color: #dddddd;
 }
 
 p {
@@ -97,7 +98,7 @@ body footer .h-layout p a:hover {
 }
 
 .h-layout {
-  max-width: 90rem;
+  max-width: 80rem;
   margin: 0 auto;
   padding: 2rem;
   min-height: 100vh;
@@ -355,21 +356,44 @@ footer ul li a:hover::after {
   VARIABLES
 */
 .hero {
-  height: calc(100vh - 7rem);
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
-  align-items: center;
+  min-height: calc(100vh - 7rem);
+}
+@media screen and (min-width: 60rem) {
+  .hero {
+    flex-wrap: nowrap;
+    justify-content: space-between;
+    align-items: center;
+  }
+}
+.hero > * {
+  flex-basis: 30rem;
+}
+.hero > div h1 {
+  display: inline-block;
+}
+@media screen and (min-width: 60rem) {
+  .hero__image {
+    flex-basis: 40rem;
+  }
 }
 .hero__image img {
   width: 100%;
+  display: block;
   object-fit: cover;
 }
 .hero__content {
-  padding: 1rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
   order: -1;
 }
 .hero__content h1 {
+  text-align: center;
+}
+.hero__content p {
   text-align: center;
 }
 .hero__content .btn--primary {
@@ -378,11 +402,6 @@ footer ul li a:hover::after {
   text-decoration: none;
   border-radius: 6px;
   color: #fff;
-}
-.hero > div {
-  width: 40rem;
-}
-.hero > div h1 {
   display: inline-block;
 }
 
@@ -405,81 +424,180 @@ footer ul li a:hover::after {
 }
 .blog-articles > article {
   padding: 1rem;
-  width: 30rem;
+  flex-basis: 30rem;
+  flex-grow: 1;
 }
-.blog-articles > article .blog-article__image img {
+.blog-articles > article img {
+  height: 15rem;
   width: 100%;
   object-fit: cover;
 }
-
-body {
-  background-color: #dddddd;
+.blog-articles > article h2 {
+  margin-top: 0;
 }
 
-ul {
-  list-style-type: none;
+/*
+  VARIABLES
+*/
+.service-list {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: stretch;
 }
-ul li a {
+.service-list > li {
+  flex-basis: 20rem;
+  flex-grow: 1;
+  padding: 1rem;
+}
+.service-list > li .service-card {
+  display: flex;
+  flex-direction: column;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+}
+.service-list > li .service-card h3 {
+  background-color: #073248;
+  color: #e5e5e5;
+  margin-top: 0;
+  padding: 0.5rem 1rem;
+}
+.service-list > li .service-card .content {
+  padding: 1rem;
+}
+.service-list > li .service-card img {
+  width: 100%;
+  height: 15rem;
+  object-fit: cover;
+  display: block;
+}
+.service-list > li .service-card p {
+  margin-top: 1rem;
+}
+.service-list > li .service-card h4 {
+  margin-bottom: 0;
+}
+.service-list > li .service-card h4 strong {
   color: #073248;
 }
 
-* {
-  box-sizing: border-box;
+/*
+  VARIABLES
+*/
+.contact-page__title {
+  text-align: center;
 }
-
-/* Style inputs */
-input[type=text],
-select,
-textarea {
+.contact-page .contact-form {
+  display: flex;
+  flex-wrap: wrap;
+}
+.contact-page .contact-form > * {
+  flex-basis: 30rem;
+  flex-grow: 1;
+}
+.contact-page .contact-form__image {
+  display: block;
+  height: 20rem;
+  max-width: 100%;
+  object-fit: cover;
+  flex-grow: 1;
+  border-radius: 4px;
+}
+.contact-page .contact-form form {
+  margin-top: 1rem;
+  padding: 1rem;
+  background-color: #fff;
+  border-radius: 4px;
+}
+@media screen and (min-width: 70rem) {
+  .contact-page .contact-form form {
+    margin-top: 0;
+    margin-left: 1rem;
+  }
+}
+.contact-page .contact-form form input,
+.contact-page .contact-form form textarea {
+  font-family: inherit;
+}
+.contact-page .contact-form form input:focus,
+.contact-page .contact-form form textarea:focus {
+  outline: solid 1px #073248;
+}
+.contact-page .contact-form form input[type=text],
+.contact-page .contact-form form select,
+.contact-page .contact-form form textarea {
   width: 100%;
   padding: 16px;
   border: 1px solid #ccc;
   margin-top: 6px;
   margin-bottom: 16px;
   resize: vertical;
+  border-radius: 4px;
 }
-
-input[type=submit] {
-  background-color: #180753;
-  color: white;
-  padding: 12px 20px;
+.contact-page .contact-form form input[type=submit] {
+  padding: 0.6rem 1.2rem;
+  background-color: #073248;
+  text-decoration: none;
+  border-radius: 6px;
+  color: #fff;
   border: none;
   cursor: pointer;
 }
-input[type=submit]:hover {
+.contact-page .contact-form form input[type=submit]:hover {
   background-color: #4578a0;
 }
 
-/* Style the container/contact section */
-.container {
-  border-radius: 5px;
-  background-color: #ffffff;
-  padding: 10px;
+.contact-cta {
+  background-color: #073248;
+  color: #fff;
+  height: 20rem;
+  min-height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  border-radius: 4px;
+}
+.contact-cta h2 {
+  text-align: center;
+}
+.contact-cta .btn--primary {
+  padding: 0.6rem 1.2rem;
+  background-color: #fff;
+  text-decoration: none;
+  border-radius: 6px;
+  color: #073248;
+  display: inline-block;
 }
 
-.contact-form {
-  flex-wrap: wrap center;
+/*
+  VARIABLES
+*/
+.team {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
 }
-.contact-form > div {
-  width: 40rem;
+.team__member {
+  padding: 2rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  flex-basis: 20rem;
+  flex-grow: 1;
 }
-
-/* Create two columns that float next to each other */
-.column {
-  margin-top: 6px;
-  padding: 20px;
+.team__member img {
+  width: 10rem;
+  height: 10rem;
+  border-radius: 50%;
+  border: solid 2px #073248;
+  overflow: hidden;
 }
-.column img {
-  width: 100%;
+.team__member h3 {
+  margin-top: 0;
 }
-
-/* Responsive layout - when the screen is less than 600px wide, make the two columns stack on top of each other instead of next to each other */
-@media screen and (max-width: 600px) {
-  .column-form,
-input[type=submit] {
-    width: 100%;
-    margin-top: 0;
-  }
+.team__member a svg {
+  color: #073248;
+}
+.team__member a:hover svg {
+  color: #000;
 }
 
 /*# sourceMappingURL=main.css.map */
